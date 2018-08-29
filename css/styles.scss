@@ -1,0 +1,57 @@
+$primary: #4baae0;
+$primary-light: lighten($primary, 10%);
+$primary-dark: darken($primary, 20%);
+
+@import "partials/mixins";
+
+.blog_cta-one {
+  width: 100%;
+  background-color: $primary;
+  background-image: url('../images/cta-background.jpg');
+  background-position: center;
+  background-size: cover;
+  padding: .5em;
+  margin: 2em 0;
+  box-shadow: 0px 0px 5px rgba(90,90,90,0.5);
+  float: left;
+
+
+  .blog_cta-content {
+    background-color: rgba(0,0,0,0.3);
+    border: 1px solid white;
+    width: 100%;
+    padding: 3em 2em;
+    float: left;
+
+  }
+
+  .blog_cta-one-button {
+    margin-bottom: 0;
+    text-transform: uppercase;
+    width: 200px;
+    font-size: 1em;
+  }
+
+  .message {
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 1px rgba(30,30,30,0.6);
+    text-align: center;
+    margin-bottom: 1em;
+    font-family: "Gotham SSm A","Gotham SSm B",sans-serif;
+    font-size: 1.8em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .call_to_action {
+    text-align: center;
+
+    a {
+      background: #fff;
+      color: $primary;
+      padding: .5em 1em;
+      border-radius: .25em;
+    }
+  }
+}
