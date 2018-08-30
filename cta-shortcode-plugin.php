@@ -7,6 +7,7 @@
    Author: Dan
    Author URI: http://technologyadvice.com
    License: GPL2
+   GitHub Theme URI: https://github.com/warofthesun/cta-shortcodes
    */
 ?>
 <?php
@@ -37,8 +38,8 @@ function ctaTwo($atts, $content = null) {
     ), $atts, 'cta');
   return '<div class="blog_cta blog_cta--two">
             <div class="blog_cta--two__content">
-              <div class="image col-xs-12 col-md-6"></div>
-              <div class="message col-xs-12 col-md-6">
+              <div class="image col-xs-12 col-sm-6"></div>
+              <div class="message col-xs-12 col-sm-6">
                 <span>' . $content . '</span>
                 <div class="call_to_action col-xs-12">
                   <a class="btn blog_cta--two__button"  data-toggle="modal" data-target="#pst-modal">
