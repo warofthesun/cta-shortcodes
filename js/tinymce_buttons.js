@@ -1,6 +1,6 @@
 (function() {
     tinymce.PluginManager.add('cta_buttons', function( ed, url ) {
-      ed.addButton('cta-one', {
+      ed.addButton('cta-menu', {
           text : 'Add CTA',
           type: 'menubutton',
           icon : false,

@@ -3,7 +3,7 @@
    Plugin Name: CTA Shortcodes
    Plugin URI: http://localhost:8888
    description: Add CTA's to blog posts
-   Version: 0.1
+   Version: 1.2
    Author: Dan
    Author URI: http://technologyadvice.com
    License: GPL2
@@ -16,11 +16,11 @@ function ctaOne($atts, $content = null) {
     array(
       'link' => 'http://technologyadvice.com'
     ), $atts, 'cta');
-  return '<div class="blog_cta-one ">
-            <div class="blog_cta-content">
+  return '<div class="blog_cta blog_cta--one">
+            <div class="blog_cta--one__content">
               <div class="message col-xs-12">' . $content . '</div>
               <div class="call_to_action col-xs-12">
-                <a class="btn blog_cta-one-button"  data-toggle="modal" data-target="#pst-modal">
+                <a class="btn blog_cta--one__button"  data-toggle="modal" data-target="#pst-modal">
                   find out now
                 </a>
               </div>
@@ -29,6 +29,29 @@ function ctaOne($atts, $content = null) {
 }
 
 add_shortcode('cta-one', 'ctaOne');
+
+function ctaTwo($atts, $content = null) {
+  $atts = shortcode_atts(
+    array(
+      'link' => 'http://technologyadvice.com'
+    ), $atts, 'cta');
+  return '<div class="blog_cta blog_cta--two">
+            <div class="blog_cta--two__content">
+              <div class="image col-xs-12 col-md-6"></div>
+              <div class="message col-xs-12 col-md-6">
+                <span>' . $content . '</span>
+                <div class="call_to_action col-xs-12">
+                  <a class="btn blog_cta--two__button"  data-toggle="modal" data-target="#pst-modal">
+                    find out now
+                  </a>
+                </div>
+                <div class="logo"></div>
+              </div>
+            </div>
+          </div>';
+}
+
+add_shortcode('cta-two', 'ctaTwo');
 
 
 add_action( 'after_setup_theme', 'mytheme_theme_setup' );
@@ -60,7 +83,7 @@ if ( ! function_exists( 'mytheme_buttons' ) ) {
 
 if ( ! function_exists( 'mytheme_register_buttons' ) ) {
     function mytheme_register_buttons( $buttons ) {
-        array_push( $buttons, 'cta-one' );
+        array_push( $buttons, 'cta-menu' );
         return $buttons;
     }
 }
