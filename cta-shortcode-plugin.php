@@ -3,7 +3,7 @@
    Plugin Name: CTA Shortcodes
    Plugin URI: http://localhost:8888
    description: Add CTA's to blog posts
-   Version: 1.2
+   Version: 1.3
    Author: Dan
    Author URI: http://technologyadvice.com
    License: GPL2
@@ -65,6 +65,12 @@ if ( ! function_exists( 'mytheme_theme_setup' ) ) {
     }
 }
 
+function Zumper_widget_enqueue_script()
+{
+    wp_enqueue_script( 'my_custom_script', plugin_dir_url( __FILE__ ) . 'js/scripts.js', array('jquery'), '1.0.0', false );
+}
+add_action('wp_enqueue_scripts', 'Zumper_widget_enqueue_script');
+
 
 /********* TinyMCE Buttons ***********/
 if ( ! function_exists( 'mytheme_buttons' ) ) {
@@ -102,6 +108,5 @@ if ( ! function_exists( 'mytheme_add_buttons' ) ) {
 $pluginURL = plugins_url("",__FILE__);
 $CSSURL = "$pluginURL/css/styles.css";
 wp_register_style( 'cta_styles', $CSSURL);
-
 wp_enqueue_style('cta_styles');
 ?>
