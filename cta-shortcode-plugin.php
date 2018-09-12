@@ -3,7 +3,7 @@
    Plugin Name: CTA Shortcodes
    Plugin URI: http://localhost:8888
    description: Add CTA's to blog posts
-   Version: 1.3
+   Version: 1.4
    Author: Dan
    Author URI: http://technologyadvice.com
    License: GPL2
@@ -21,7 +21,7 @@ function ctaOne($atts, $content = null) {
             <div class="blog_cta--one__content">
               <div class="message col-xs-12">' . $content . '</div>
               <div class="call_to_action col-xs-12">
-                <a class="btn blog_cta--one__button"  data-toggle="modal" data-target="#pst-modal">
+                <a class="btn blog_cta--one__button" data-backdrop="false" data-toggle="modal" data-target="#pst-modal">
                   find out now
                 </a>
               </div>
@@ -42,7 +42,7 @@ function ctaTwo($atts, $content = null) {
               <div class="message col-xs-12 col-sm-6">
                 <span>' . $content . '</span>
                 <div class="call_to_action col-xs-12">
-                  <a class="btn blog_cta--two__button"  data-toggle="modal" data-target="#pst-modal">
+                  <a class="btn blog_cta--two__button" data-backdrop="false" data-toggle="modal" data-target="#pst-modal">
                     find out now
                   </a>
                 </div>
@@ -64,12 +64,6 @@ if ( ! function_exists( 'mytheme_theme_setup' ) ) {
 
     }
 }
-
-function Zumper_widget_enqueue_script()
-{
-    wp_enqueue_script( 'my_custom_script', plugin_dir_url( __FILE__ ) . 'js/scripts.js', array('jquery'), '1.0.0', false );
-}
-add_action('wp_enqueue_scripts', 'Zumper_widget_enqueue_script');
 
 
 /********* TinyMCE Buttons ***********/
