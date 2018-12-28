@@ -3,7 +3,7 @@
   float: left; }
   .blog_cta .message {
     color: #fff;
-    font-family: "Gotham SSm A","Gotham SSm B",sans-serif;
+    font-family: Montserrat,sans-serif;
     text-shadow: 1px 1px 1px rgba(30, 30, 30, 0.6); }
   .blog_cta--one {
     background-image: url("../images/cta-background.jpg");
