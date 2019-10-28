@@ -93,3 +93,12 @@
       margin-bottom: 1em;
       margin-left: auto;
       margin-right: auto; }
+
+.request-quote-modal_blog .product-modal__body--product-logo {
+  border: 0; }
+
+.request-quote-modal_blog .product-modal__body--header-text {
+  font-size: 1.5em; }
+
+.request-quote-modal_blog .modal__privacy-guarantee {
+  font-size: 1em; }

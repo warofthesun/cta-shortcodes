@@ -16,6 +16,12 @@
                 onclick : function() {
                      ed.selection.setContent('[cta-two]' + ed.selection.getContent() + '[/cta-two]');
                 }
+              },
+              {
+                text: 'Get Pricing',
+                onclick : function() {
+                     ed.selection.setContent('[get-pricing category="CRM" cta="Get Pricing" width="200px" url="product page URL"]' + ed.selection.getContent() + '[/get-pricing]');
+                }
               }
           ]
       });

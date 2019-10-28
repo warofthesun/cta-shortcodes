@@ -54,6 +54,83 @@ function ctaTwo($atts, $content = null) {
 
 add_shortcode('cta-two', 'ctaTwo');
 
+function pricingModal($atts, $content = null) {
+    extract(shortcode_atts(array(
+     'category' => 'CRM',
+     'cta' => 'Get Pricing',
+     'url' => 'http://localhost/techadvice/blog/products/sugarcrm-reviews/',
+     'width' => '200px'
+    ), $atts));
+    $postid = url_to_postid( $url );
+    query_posts($postid);
+    if (have_posts()) : while (have_posts()) : the_post();
+    $product_title = get_the_title($postid);
+    $product_logo = get_the_post_thumbnail($postid);
+  return '<button class="btn btn-primary btn-block" style="width: ' . $width . '" data-toggle="modal" data-target="#requestQuoteModalBlog">' . $cta . '</button>
+  <div class="modal product-modal fade request-quote-modal_blog" id="requestQuoteModalBlog" tabindex="-1" role="dialog" aria-labelledby="requestQuoteModalBlog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="product-modal__content modal-content">
+      <div class="product-modal__header modal-header">
+        <h3 class="product-modal__header--title">Get pricing for ' . $product_title . '</h3>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="product-modal__body modal-body">
+        <div class="product-modal__body--header">
+          <div class="row">
+            <div class="col-xs-3">
+              <div class="product-modal__body--product-logo">' . $product_logo . '</div>
+            </div>
+            <div class="col-xs-9">
+              <h4 class="product-modal__body--header-text">How can we contact you with pricing info?</h4>
+              <p>Make sure this product is right for your budget. Our experts will be in touch with all the pricing info you need.</p>
+            </div>
+          </div>
+        </div>
+        <form name="product-modal-pricing" class="product-modal__form" method="POST" action="">
+          <input name="Lead Source" type="hidden" value="Get Pricing">
+          <input name="Company" type="hidden" value="[not provided]">
+          <input name="Category" type="hidden" value="' . $category . '">
+          <input name="Last Name" type="hidden" value="[not provided]">
+          <input name="Status" type="hidden" value="New">
+          <input name="Products" type="hidden" value="' . $product_title . '">
+          <input name="Sales Stage" type="hidden" value="MQL">
+          <div class="product-modal__body--form-container">
+            <div class="product-modal__input-container form-group">
+              <label for="name">What is your name?</label>
+              <span class="sr-only">Name</span>
+              <input type="text" class="product-modal__input form-control name-input required" id="name" name="First Name">
+            </div>
+            <div class="product-modal__input-container form-group">
+              <label for="phone">What is your phone number?</label>
+              <span class="sr-only">Phone Number</span>
+              <input type="text" class="product-modal__input form-control phone-input required" id="phone" name="Business Phone">
+            </div>
+            <div class="product-modal__input-container form-group">
+              <label for="email">What is your email address?</label>
+              <span class="sr-only">Email Address</span>
+              <input type="text" class="product-modal__input form-control email-input required" id="email" name="Email">
+            </div>
+          </div>
+          <div class="product-modal__footer">
+            <button type="submit" value="Submit" class="product-modal__submit btn btn-primary btn-block">
+              Get Pricing
+            </button>
+          </div>
+        </form>
+        <div class="modal__privacy-container">
+          <p class="modal__privacy-guarantee mt-0">
+            <i class="fa fa-lock lock-icon" aria-hidden="true"></i>By clicking the button above, I confirm that I have read and agree to the <a href="<?php echo home_url(); ?>/terms-conditions" target="_blank">Terms of Use</a> and <a href="<?php echo home_url(); ?>/privacy-policy" target="_blank">Privacy Policy.</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>';
+endwhile; else: endif;
+}
+
+add_shortcode('get-pricing', 'pricingModal');
+
 
 add_action( 'after_setup_theme', 'mytheme_theme_setup' );
 
@@ -103,4 +180,5 @@ $pluginURL = plugins_url("",__FILE__);
 $CSSURL = "$pluginURL/css/styles.css";
 wp_register_style( 'cta_styles', $CSSURL);
 wp_enqueue_style('cta_styles');
+
 ?>

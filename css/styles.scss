@@ -127,3 +127,17 @@ $primary-dark: darken($primary, 20%);
 
   }
 }
+
+.request-quote-modal_blog {
+  .product-modal__body--product-logo {
+    border: 0;
+  }
+
+  .product-modal__body--header-text {
+    font-size: 1.5em;
+  }
+
+  .modal__privacy-guarantee {
+    font-size: 1em;
+  }
+}
