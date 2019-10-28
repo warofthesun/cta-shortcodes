@@ -20,7 +20,7 @@
               {
                 text: 'Get Pricing',
                 onclick : function() {
-                     ed.selection.setContent('[get-pricing category="CRM" cta="Get Pricing" width="200px" url="product page URL"]' + ed.selection.getContent() + '[/get-pricing]');
+                     ed.selection.setContent('[get-pricing category="CRM" cta="Get Pricing" width="200px" url="product name-reviews"]' + ed.selection.getContent() + '[/get-pricing]');
                 }
               }
           ]

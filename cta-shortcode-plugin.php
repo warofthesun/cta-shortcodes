@@ -58,10 +58,12 @@ function pricingModal($atts, $content = null) {
     extract(shortcode_atts(array(
      'category' => 'CRM',
      'cta' => 'Get Pricing',
-     'url' => 'http://localhost/techadvice/blog/products/sugarcrm-reviews/',
+     'url' => '',
      'width' => '200px'
     ), $atts));
-    $postid = url_to_postid( $url );
+    $home = get_home_url();
+    $product = $home.'/blog/products/'.$url;
+    $postid = url_to_postid( $product );
     query_posts($postid);
     if (have_posts()) : while (have_posts()) : the_post();
     $product_title = get_the_title($postid);
