@@ -1,13 +1,12 @@
 <?php
    /*
    Plugin Name: CTA Shortcodes
-   Plugin URI: http://localhost:8888
    description: Add CTA's to blog posts
    Version: 1.8
    Author: Dan
    Author URI: http://technologyadvice.com
    License: GPL2
-   GitHub Theme URI: https://github.com/warofthesun/cta-shortcodes
+   GitHub Plugin URI: https://github.com/warofthesun/cta-shortcodes
    */
 ?>
 <?php
