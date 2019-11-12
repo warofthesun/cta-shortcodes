@@ -2,7 +2,7 @@
    /*
    Plugin Name: CTA Shortcodes
    description: Add CTA's to blog posts
-   Version: 1.9
+   Version: 1.9.1
    Author: Dan
    Author URI: http://technologyadvice.com
    License: GPL2
@@ -118,7 +118,7 @@ function pricingModal($atts, $content = null) {
           </div>
           <div class="product-modal__footer">
             <button type="submit" value="Submit" class="product-modal__submit btn btn-primary btn-block">
-              Get Pricing
+              Get ' . $product_title . ' Pricing
             </button>
           </div>
         </form>
