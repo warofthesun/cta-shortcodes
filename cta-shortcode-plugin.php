@@ -1,9 +1,9 @@
 <?php
    /*
    Plugin Name: CTA Shortcodes
-   Plugin URI: https://technologyadvice.com
+   Plugin URI: http://localhost:8888
    description: Add CTA's to blog posts
-   Version: 1.7
+   Version: 1.8
    Author: Dan
    Author URI: http://technologyadvice.com
    License: GPL2
@@ -174,8 +174,9 @@ if ( ! function_exists( 'mytheme_register_buttons' ) ) {
 
 if ( ! function_exists( 'mytheme_add_buttons' ) ) {
     function mytheme_add_buttons( $plugin_array ) {
-        $plugin_array['cta_buttons'] = plugins_url() . '/cta-shortcodes/js/tinymce_buttons.js';
+        $plugin_array['cta_buttons'] = plugin_dir_url( __FILE__ ) . 'js/tinymce_buttons.js';
         return $plugin_array;
+        console.log('hey');
     }
 }
 
