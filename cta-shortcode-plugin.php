@@ -1,9 +1,9 @@
 <?php
    /*
    Plugin Name: CTA Shortcodes
-   Plugin URI: http://localhost:8888
+   Plugin URI: https://technologyadvice.com
    description: Add CTA's to blog posts
-   Version: 1.4
+   Version: 1.7
    Author: Dan
    Author URI: http://technologyadvice.com
    License: GPL2
