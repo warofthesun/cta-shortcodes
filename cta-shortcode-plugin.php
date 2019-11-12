@@ -58,16 +58,20 @@ function pricingModal($atts, $content = null) {
     extract(shortcode_atts(array(
      'category' => 'CRM',
      'cta' => 'Get Pricing',
-     'url' => '',
+     'url' => 'copper-reviews',
      'width' => '200px'
     ), $atts));
     $home = get_home_url();
     $product = $home.'/blog/products/'.$url;
     $postid = url_to_postid( $product );
     query_posts($postid);
-    if (have_posts()) : while (have_posts()) : the_post();
+    if (have_posts()) :
     $product_title = get_the_title($postid);
     $product_logo = get_the_post_thumbnail($postid);
+    wp_reset_query();
+    endif;
+    wp_register_script( 'techadvice-getPRicing', plugin_dir_url( __FILE__ ) . 'js/getPricing.js', array( 'jquery' ), '', true );
+    wp_enqueue_script( 'techadvice-getPRicing?version='.RESOURCE_VERSION );
   return '<button class="btn btn-primary btn-block" style="width: ' . $width . '" data-toggle="modal" data-target="#requestQuoteModalBlog">' . $cta . '</button>
   <div class="modal product-modal fade request-quote-modal_blog" id="requestQuoteModalBlog" tabindex="-1" role="dialog" aria-labelledby="requestQuoteModalBlog" aria-hidden="true">
   <div class="modal-dialog">
@@ -128,7 +132,6 @@ function pricingModal($atts, $content = null) {
     </div>
   </div>
 </div>';
-endwhile; else: endif;
 }
 
 add_shortcode('get-pricing', 'pricingModal');
