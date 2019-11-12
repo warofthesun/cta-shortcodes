@@ -2,7 +2,7 @@
    /*
    Plugin Name: CTA Shortcodes
    description: Add CTA's to blog posts
-   Version: 1.8
+   Version: 1.9
    Author: Dan
    Author URI: http://technologyadvice.com
    License: GPL2
@@ -71,8 +71,8 @@ function pricingModal($atts, $content = null) {
     endif;
     wp_register_script( 'techadvice-getPRicing', plugin_dir_url( __FILE__ ) . 'js/getPricing.js', array( 'jquery' ), '', true );
     wp_enqueue_script( 'techadvice-getPRicing?version='.RESOURCE_VERSION );
-  return '<button class="btn btn-primary btn-block" style="width: ' . $width . '" data-toggle="modal" data-target="#requestQuoteModalBlog">' . $cta . '</button>
-  <div class="modal product-modal fade request-quote-modal_blog" id="requestQuoteModalBlog" tabindex="-1" role="dialog" aria-labelledby="requestQuoteModalBlog" aria-hidden="true">
+  return '<button class="btn btn-primary btn-block" style="width: ' . $width . '" data-toggle="modal" data-target="#requestQuoteModalBlog-' . $url . '">' . $cta . '</button>
+  <div class="modal product-modal fade request-quote-modal_blog" id="requestQuoteModalBlog-' . $url . '" tabindex="-1" role="dialog" aria-labelledby="requestQuoteModalBlog" aria-hidden="true">
   <div class="modal-dialog">
     <div class="product-modal__content modal-content">
       <div class="product-modal__header modal-header">
