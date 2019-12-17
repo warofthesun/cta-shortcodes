@@ -2,7 +2,7 @@
    /*
    Plugin Name: CTA Shortcodes
    description: Add CTA's to blog posts
-   Version: 1.9.1
+   Version: 1.9.2
    Author: Dan
    Author URI: http://technologyadvice.com
    License: GPL2
